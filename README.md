@@ -95,6 +95,19 @@ Star the repo if you find it useful!
 - Model performance varies significantly based on quantization level and hardware. Always benchmark on your target device.
 - Respect model licenses (some allow commercial use, others have restrictions).
 
+
+## 📈 Star History
+
+<div align="center">
+	<a href="https://www.star-history.com/?repos=ishandutta2007%2FAwesome-Edge-Ready-LLM-Models&type=date&legend=bottom-right">
+	 <picture>
+	   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Edge-Ready-LLM-Models&type=date&theme=dark&legend=bottom-right" />
+	   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Edge-Ready-LLM-Models&type=date&legend=bottom-right" />
+	   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=ishandutta2007/Awesome-Edge-Ready-LLM-Models&type=date&legend=bottom-right" />
+	 </picture>
+	</a>
+</div>
+
 ---
 
 **Made for developers, on-device AI enthusiasts, edge computing teams, and privacy-focused users.**  
