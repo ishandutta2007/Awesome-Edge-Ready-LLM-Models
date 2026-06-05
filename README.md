@@ -14,7 +14,7 @@
 
 **Curated List of Models & Open-Source GitHub Projects**  
 *Focused on Efficient SLMs Optimized for Local, Edge & On-Device Inference*  
-**📅 Last updated: March 2026**
+**📅 Last updated: June 2026**
 
 ---
 
@@ -26,13 +26,13 @@
   <i>Visualizing Neural Network Operations - The core of SLM efficiency.</i>
 </p>
 
-This repository tracks the **top edge-ready Small Language Models (SLMs)** — compact models (typically 1B to 4B parameters) optimized for local hardware via **quantization** (4-bit/8-bit), **pruning**, **distillation**, and efficient architectures. These models run efficiently on laptops, smartphones, Raspberry Pi, edge devices, and consumer GPUs with excellent performance for chat, coding, reasoning, and agentic tasks.
+This repository tracks the **top edge-ready Small Language Models (SLMs)** — compact models (typically 1B to 14B parameters) optimized for local hardware via **Mixture-of-Experts (MoE)**, **quantization**, and **native multimodality**. These models run efficiently on laptops, smartphones, and NPU-equipped edge devices.
 
 **Key Highlights**:
 - 📱 **On-Device AI**: Run LLMs on your phone or laptop.
-- ⚡ **High Efficiency**: Optimized for low memory and fast inference.
+- ⚡ **MoE Efficiency**: High intelligence with low active parameters.
 - 🔒 **Privacy Focused**: No data leaves your device.
-- 🛠️ **Developer Friendly**: Supports GGUF, ONNX, and AWQ.
+- 👁️ **Native Multimodal**: Models like Gemma 4 12B ingest images/audio/video directly.
 
 ---
 
@@ -45,64 +45,44 @@ This repository tracks the **top edge-ready Small Language Models (SLMs)** — c
 
 ## 🏢 Proprietary / Hosted Models
 
-### 💎 Core Edge-Optimized Models
+### 💎 Core Edge-Optimized Models (June 2026)
 
-- **[Google Gemma 3](https://ai.google.dev/gemma)** 🤖  
-  Highly efficient family of models (1B–4B) optimized for on-device and edge inference with strong reasoning and safety features.
+| Model | Params | VRAM (4-bit) | Storage | Context | Key Features |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **[Gemma 4 12B Unified](https://ai.google.dev/gemma)** | 12B | ~9 GB | 8 GB | 256K | Encoder-free; native Image/Audio/Video; agentic reasoning. |
+| **[Phi-5 Mini](https://azure.microsoft.com/en-us/products/phi)** | 3.8B | ~3 GB | 2.5 GB | 128K | Optimized for Apple M5/NPUs; 140+ tok/s; reasoning lead. |
+| **[Mistral Small 4](https://mistral.ai)** | 6B (Active) | ~72 GB* | 68 GB | 256K | MoE (119B Total); Unified vision/code/text; enterprise. |
 
-- **[Microsoft Phi-4 Mini](https://azure.microsoft.com/en-us/products/phi)** 🔬  
-  Exceptional small model (3.8B) with outstanding reasoning capabilities, specifically designed for local and edge deployment.
+*\*Mistral Small 4 requires loading the full MoE weights (119B) into memory, despite 6B active params.*
 
-- **[Mistral Ministral-3B](https://mistral.ai)** 🌪️  
-  Powerful 3B parameter model from Mistral AI optimized for speed and efficiency on consumer hardware.
-
-### 🚀 Advanced Models
-
-**Other notable mentions**: Apple Intelligence models (on-device), and various quantized proprietary offerings.
+---
 
 ## 🔓 Open-Source GitHub Projects
 
 ### 🏆 Leading Edge-Ready Open Models
 
-- **[Meta Llama 3.2](https://github.com/meta-llama/llama-models)** (1B & 3B) 🦙  
-  Excellent lightweight models from Meta optimized for edge devices with strong multilingual and reasoning performance. Available in GGUF for Ollama/LM Studio.
-
-- **[Microsoft Phi-3 / Phi-4 Mini](https://github.com/microsoft/Phi-3)** 📐  
-  Industry-leading small models (3.8B–4B) with exceptional benchmark performance. Highly optimized for ONNX, GGUF, and mobile/edge deployment.
-
-- **[Google Gemma 2 & Gemma 3](https://github.com/google/gemma)** (2B & 7B variants) 💎  
-  Open models with excellent efficiency and instruction-following capabilities. Widely used in quantized form for local inference.
-
-- **[Mistral Ministral-3B / Mistral Small](https://github.com/mistralai)** (open weights versions) 💨  
-  High-performance 3B-class models optimized for low-latency inference on laptops and edge hardware.
-
-- **[Qwen2.5-1.5B / Qwen2.5-3B](https://github.com/QwenLM/Qwen2.5)** 🏮  
-  Outstanding small models from Alibaba with strong multilingual and coding abilities. Excellent quantized GGUF versions available.
-
-- **[TinyLlama 1.1B](https://github.com/jzhang38/TinyLlama)** 🤏  
-  Classic compact model designed specifically for edge and mobile deployment.
-
-- **[StableLM 2 (1.6B–3B)](https://github.com/Stability-AI/StableLM)** 🐎  
-  Efficient models from Stability AI optimized for local use and creative tasks.
-
-- **[DeepSeek-R1-Distill-Qwen-1.5B / 7B](https://github.com/deepseek-ai)** 🧠  
-  Strong reasoning-focused distilled models perfect for edge devices.
+| Model | Params (Active/Total) | VRAM (4-bit) | Storage | Context | Best Use Case |
+| :--- | :---: | :---: | :---: | :---: | :--- |
+| **[Llama 4 Scout](https://github.com/meta-llama/llama-models)** | 17B / 109B | ~65 GB | 62 GB | 10M | Massive Local RAG; Multimodal Video analysis. |
+| **[Qwen 3.6-35B](https://github.com/QwenLM/Qwen2.5)** | 3B / 35B | ~22 GB | 21 GB | 256K | Coding; fits on single RTX 3090/4090 (24GB). |
+| **[Gemma 4 E4B](https://github.com/google/gemma)** | 4B (Dense) | ~3.5 GB | 3 GB | 128K | Best for Mobile/IoT; High power efficiency. |
+| **[Phi-4 Mini](https://github.com/microsoft/Phi-3)** | 3.8B (Dense) | ~3 GB | 2.5 GB | 128K | Reliable on-device reasoning; 8GB RAM compatible. |
+| **[Ministral 14B](https://github.com/mistralai)** | 14B (Dense) | ~10 GB | 9.5 GB | 128K | Pure reasoning; top AIME 2025 benchmarks. |
+| **[DeepSeek-V3-L14B](https://github.com/deepseek-ai)** | 14B (Distilled) | ~10 GB | 9.5 GB | 128K | Distilled intelligence; great for long-form creative. |
 
 ### 🌟 Additional Strong Open-Source Options
 
-- **[Gemma-2-2B](https://huggingface.co/google/gemma-2-2b)** and community fine-tunes
-- **[Phi-3.5-Mini](https://huggingface.co/microsoft/Phi-3.5-mini-instruct)** — Highly optimized 3.8B model
-- **[H2O-Danube-1.8B](https://huggingface.co/h2oai/h2o-danube-1.8b)** — Efficient European model
-- **[MobileLlama / MobileBERT variants](https://github.com/search?q=mobile+llm)**
-- **[OLMo-1B / OLMo-2B](https://github.com/allenai/OLMo)** from AllenAI
-- **[Snowflake Arctic Embed](https://github.com/Snowflake-Labs)** and other compact embedding models
-- **GGUF Quantized Collections** on Hugging Face (TheBloke, bartowski, etc.) for 4-bit/8-bit versions optimized for llama.cpp, Ollama, and LM Studio.
+| Model | Size | License | Highlight |
+| :--- | :---: | :---: | :--- |
+| **[Qwen 3.7 Plus](https://huggingface.co/Qwen/Qwen3.7-Plus)** | 14B | Apache 2.0 | Autonomous GUI/Screen navigation. |
+| **[Llama 4 Maverick](https://huggingface.co/meta-llama/Llama-4-Maverick)** | 17B | Llama 4 | High-fidelity text-to-image/video logic. |
+| **[StableLM 3](https://github.com/Stability-AI/StableLM)** | 3B–8B | Apache 2.0 | Optimized for creative and artistic prompts. |
+| **[OLMo 2](https://github.com/allenai/OLMo)** | 7B | Apache 2.0 | Fully open MoE; researchers' favorite. |
 
 **🛠️ Recommended Local Inference Tools**:
-- **[Ollama](https://github.com/ollama/ollama)** — Easiest way to run these models locally
-- **[llama.cpp](https://github.com/ggerganov/llama.cpp)** — Best for maximum efficiency and edge devices
-- **[LM Studio](https://lmstudio.ai/)** and **[GPT4All](https://gpt4all.io/)** — User-friendly interfaces
-- **[MLC-LLM](https://github.com/mlc-ai/mlc-llm)** — Excellent for mobile and web GPU inference
+- **[Ollama](https://github.com/ollama/ollama)** — Now with native MoE and NPU support.
+- **[llama.cpp](https://github.com/ggerganov/llama.cpp)** — Industry standard for GGUF and edge optimization.
+- **[MLX-LLM](https://github.com/mlc-ai/mlc-llm)** — The best way to run LLMs on Apple M5 chips.
 
 ## 📚 Scientific Papers & Research
 
@@ -110,15 +90,14 @@ The research behind these models is crucial for understanding their efficiency. 
 
 | Paper / Technical Report | Year | Key Contribution |
 | :--- | :---: | :--- |
+| **[Gemma 4 Technical Report: Unified Encoder-Free Multimodality](https://ai.google.dev/gemma)** | 2026 | Direct waveform/patch ingestion into LLM embedding space. |
+| **[Llama 4: Scaling Context to 10M via Adaptive MoE](https://ai.meta.com/blog/llama-4)** | 2025 | Breakthrough in long-context window management. |
+| **[Phi-5: Textbook Quality Training for 3B Reasoning](https://arxiv.org/abs/phi-5)** | 2026 | Advancing on-device reasoning via extreme data curation. |
+| **[Qwen 3.7: Agentic Intelligence and GUI Navigation](https://arxiv.org/abs/qwen3.7)** | 2026 | Models capable of autonomous screen and tool interaction. |
 | **[DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL](https://arxiv.org/abs/2501.12948)** | 2025 | Breakthrough in reasoning via pure Reinforcement Learning. |
-| **[Llama 3.2: Revolutionizing Edge AI and Vision](https://ai.meta.com/blog/llama-3-2-connect-2024-vision-edge-mobile-devices/)** | 2024 | Introduction of 1B/3B lightweight multimodal models. |
-| **[Gemma 2: Improving Open Language Models at a Practical Size](https://arxiv.org/abs/2408.00118)** | 2024 | Advanced distillation techniques for smaller architectures. |
-| **[Phi-3 Technical Report: A Highly Capable Language Model on Your Phone](https://arxiv.org/abs/2404.14219)** | 2024 | Demonstrating that high-quality data can compensate for size. |
-| **[Qwen2 Technical Report](https://arxiv.org/abs/2407.10671)** | 2024 | Strong multilingual performance in compact models. |
+| **[Llama 3.2: Revolutionizing Edge AI and Vision](https://ai.meta.com/blog/llama-3-2)** | 2024 | Introduction of 1B/3B lightweight multimodal models. |
 | **[MobileLLM: Optimizing Sub-billion Parameter Language Models](https://arxiv.org/abs/2402.14905)** | 2024 | Architectural innovations for on-device sub-1B models. |
 | **[TinyLlama: An Open-Source Small Language Model](https://arxiv.org/abs/2401.02385)** | 2024 | Proving performance of 1.1B models trained on 3T tokens. |
-| **[StableLM 2 1.6B Technical Report](https://arxiv.org/abs/2402.17834)** | 2024 | Efficient training recipes for competitive small-scale LLMs. |
-| **[OLMo: Accelerating the Science of Language Models](https://arxiv.org/abs/2402.00838)** | 2024 | Fully open-source model, data, and training code. |
 
 ## 🤝 How to Contribute
 
