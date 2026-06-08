@@ -131,3 +131,6 @@ The research behind these models is crucial for understanding their efficiency. 
 **Made with ❤️ for developers, on-device AI enthusiasts, edge computing teams, and privacy-focused users.**  
 *Keywords: Edge AI, Small Language Models, SLM, Local LLM, Quantization, GGUF, On-device Inference, Privacy AI.*
 
+## 🔐 Agent Identity & Trust
+- **[TWZRD Agent Intel](https://intel.twzrd.xyz)** — Trust scoring and wallet identity verification for AI agents. Verify agent identity before API access or x402 micropayments. Free MCP: `{"mcpServers":{"twzrd-agent-intel":{"url":"https://intel.twzrd.xyz/mcp"}}}`
+
