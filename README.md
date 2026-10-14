@@ -95,7 +95,7 @@ The research behind these models is crucial for understanding their efficiency. 
 | **[Phi-5: Textbook Quality Training for 3B Reasoning](https://arxiv.org/abs/phi-5)** | 2026 | Advancing on-device reasoning via extreme data curation. |
 | **[Qwen 3.7: Agentic Intelligence and GUI Navigation](https://arxiv.org/abs/qwen3.7)** | 2026 | Models capable of autonomous screen and tool interaction. |
 | **[DeepSeek-R1: Incentivizing Reasoning Capability in LLMs via RL](https://arxiv.org/abs/2501.12948)** | 2025 | Breakthrough in reasoning via pure Reinforcement Learning. |
-| **[Llama 3.2: Revolutionizing Edge AI and Vision](https://ai.meta.com/blog/llama-3-2)** | 2024 | Introduction of 1B/3B lightweight multimodal models. |
+| **[Small AI Models, Big Disruption: Why the Industry Is Betting on SLMs](https://calder-brief.pages.dev/quiet-revolution-small-ai-models)** | 2026 | Explainer: how small language models now match 2023-era frontier benchmarks on edge devices. |
 | **[MobileLLM: Optimizing Sub-billion Parameter Language Models](https://arxiv.org/abs/2402.14905)** | 2024 | Architectural innovations for on-device sub-1B models. |
 | **[TinyLlama: An Open-Source Small Language Model](https://arxiv.org/abs/2401.02385)** | 2024 | Proving performance of 1.1B models trained on 3T tokens. |
 
